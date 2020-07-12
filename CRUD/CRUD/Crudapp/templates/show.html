@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block child_block%}
+<div class="container" align="center">
+    <h1>Information of Clients</h1>
+    <table border="1">
+        <thread>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Father Name</th>
+                <th>Mother Name</th>
+                <th>Present Address</th>
+                <th>Contact</th>
+                <th>Update</th>
+                <th>Delete</th>
+
+
+            </tr>
+        </thread>
+        {%for client in clients%}
+        <tr>
+            <td>{{client.No}}</td>
+            <td>{{client.Name}}</td>
+            <td>{{client.Father_name}}</td>
+            <td>{{client.Mother_name}}</td>
+            <td>{{client.Address}}</td>
+            <td>{{client.Contact}}</td>
+            <td><a href="/update/{{client.id}}" class="btn btn-success">Update</a></td>
+            <td><a href="/delete/{{client.id}}" class="btn btn-success">Delete</a></td>
+
+
+        </tr>
+        {%endfor%}
+
+    </table>
+
+</div>
+
+{%endblock%}
